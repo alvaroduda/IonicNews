@@ -46,11 +46,16 @@ ionic serve
 5. Abra um Pull Request
 
 ## 👥 Autores
-  Álvaro Duda da Hora - 01600199
-  Diego Rocha de Andrade - 01706460
-  João Vitor Abreu Siqueira - 01707782
-  João Pedro da Silva Costa - 01677928
-  Eliomar Vinicius Alves de Albuquerque - 01678776
+
+Álvaro Duda da Hora - 01600199
+  
+Diego Rocha de Andrade - 01706460
+  
+João Vitor Abreu Siqueira - 01707782
+  
+João Pedro da Silva Costa - 01677928
+  
+Eliomar Vinicius Alves de Albuquerque - 01678776
 
 ## 📄 Licença
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE.md](LICENSE.md) para mais detalhes.
