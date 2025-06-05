@@ -1,0 +1,131 @@
+<ion-header class="custom-header">
+  <div class="header-content">
+    <div class="logo-section">
+      <ion-icon name="wallet-outline" class="logo-icon"></ion-icon>
+      <h1>ConverterMoney</h1>
+    </div>
+    <div class="status-section" *ngIf="isOffline">
+      <ion-badge class="offline-badge">
+        <ion-icon name="cloud-offline-outline"></ion-icon>
+        <span>Modo Offline</span>
+      </ion-badge>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="converter-container">
+    <form #conversionForm="ngForm" (ngSubmit)="getExchangeRate()">
+      
+      <div class="amount-section">
+        <ion-card class="amount-card">
+          <ion-card-content>
+            <ion-item lines="none" class="amount-input">
+              <ion-label position="stacked">Valor para Converter</ion-label>
+              <ion-input
+                [(ngModel)]="amount"
+                name="amount"
+                type="number"
+                required
+                min="0.01"
+                placeholder="Digite o valor"
+                [errorText]="'Insira um valor válido'"
+              >
+              </ion-input>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div class="currencies-section">
+        <div class="currency-pair">
+          <ion-card class="currency-card from-currency">
+            <ion-card-header>
+              <ion-card-subtitle style="display: flex; align-items: center; gap: 6px;">
+                <ion-icon name="arrow-down-outline" style="font-size: 20px;"></ion-icon>
+                De
+              </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item lines="none">
+                <ion-select
+                  [(ngModel)]="fromCurrency"
+                  name="fromCurrency"
+                  (ionChange)="loadFlag(fromCurrency)"
+                  interface="modal"
+                  placeholder="Selecione a moeda"
+                >
+                  <ion-select-option
+                    *ngFor="let currency of currencyList"
+                    [value]="currency.code"
+                  >
+                    {{ currency.code }} - {{ currency.name }}
+                  </ion-select-option>
+                </ion-select>
+                <img [src]="getFlag(fromCurrency)" alt="From flag" *ngIf="fromCurrency" class="currency-flag" />
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+
+          <div class="swap-button-container">
+            <ion-button fill="clear" (click)="swapCurrencies()" class="swap-button">
+              <ion-icon name="swap-vertical-outline"></ion-icon>
+            </ion-button>
+          </div>
+
+          <ion-card class="currency-card to-currency">
+            <ion-card-header>
+              <ion-card-subtitle style="display: flex; align-items: center; gap: 6px;">
+                <ion-icon name="arrow-up-outline" style="font-size: 20px;"></ion-icon>
+                Para
+              </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item lines="none">
+                <ion-select
+                  [(ngModel)]="toCurrency"
+                  name="toCurrency"
+                  (ionChange)="loadFlag(toCurrency)"
+                  interface="modal"
+                  placeholder="Selecione a moeda"
+                >
+                  <ion-select-option
+                    *ngFor="let currency of currencyList"
+                    [value]="currency.code"
+                  >
+                    {{ currency.code }} - {{ currency.name }}
+                  </ion-select-option>
+                </ion-select>
+                <img [src]="getFlag(toCurrency)" alt="To flag" *ngIf="toCurrency" class="currency-flag" />
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
+
+      <div class="rate-section">
+        <ion-card class="rate-card">
+          <ion-card-content>
+            <div class="rate-display">
+              <ion-icon name="trending-up-outline"></ion-icon>
+              <h3>{{ exchangeRateText }}</h3>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div class="action-section">
+        <ion-button
+          expand="block"
+          type="submit"
+          [disabled]="!conversionForm.valid || amount <= 0"
+          class="convert-button"
+        >
+          <ion-icon name="calculator-outline"></ion-icon>
+          Converter
+        </ion-button>
+      </div>
+
+    </form>
+  </div>
+</ion-content>

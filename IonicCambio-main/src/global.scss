@@ -1,0 +1,151 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+/* Estilos personalizados */
+:root {
+  --ion-background-color: #1a1a2e;
+  --ion-toolbar-background: #16213e;
+  --ion-toolbar-color: #ffffff;
+  --ion-card-background: #0f3460;
+  --ion-item-background: #0f3460;
+  --ion-text-color: #e94560;
+  --ion-color-primary: #e94560;
+  --ion-color-secondary: #533483;
+  --ion-color-tertiary: #16213e;
+  --ion-color-success: #2ecc71;
+  --ion-color-warning: #f1c40f;
+  --ion-color-danger: #e74c3c;
+  --ion-color-medium: #34495e;
+  --ion-color-light: #ecf0f1;
+}
+
+ion-content {
+  --background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+ion-card {
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin: 16px 0;
+  background: rgba(15, 52, 96, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+ion-button {
+  --border-radius: 15px;
+  --box-shadow: 0 4px 12px rgba(233, 69, 96, 0.3);
+  --background: linear-gradient(45deg, #e94560, #533483);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+ion-toolbar {
+  --border-radius: 0 0 30px 30px;
+  --background: linear-gradient(90deg, #16213e 0%, #0f3460 100%);
+}
+
+ion-item {
+  --border-radius: 15px;
+  margin: 12px 0;
+  --background: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+ion-select {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  color: #ffffff;
+}
+
+ion-input {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --background: rgba(255, 255, 255, 0.05);
+  --border-radius: 15px;
+  --color: #ffffff;
+  --placeholder-color: rgba(255, 255, 255, 0.5);
+}
+
+ion-badge {
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --border-radius: 12px;
+  --background: rgba(233, 69, 96, 0.2);
+  --color: #e94560;
+}
+
+ion-card-subtitle {
+  color: #e94560;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+ion-card-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+ion-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e94560;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #533483;
+}

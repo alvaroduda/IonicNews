@@ -1,0 +1,54 @@
+.flag-icon {
+  width: 24px;
+  height: 18px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+
+ion-grid {
+  width: 100%;
+}
+
+.status-section {
+  .offline-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #4ECDC4 0%, #45B7AF 100%);
+    backdrop-filter: blur(4px);
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+    }
+
+    ion-icon {
+      font-size: 20px;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px;
+      border-radius: 50%;
+    }
+
+    span {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 13px;
+      font-family: 'Poppins', sans-serif;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

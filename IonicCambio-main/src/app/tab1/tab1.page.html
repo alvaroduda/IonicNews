@@ -1,0 +1,39 @@
+<ion-header class="custom-header">
+  <div class="header-content">
+    <div class="logo-section">
+      <ion-icon name="time-outline" class="logo-icon"></ion-icon>
+      <h1>Histórico</h1>
+    </div>
+    <div class="status-section">
+      <ion-badge class="offline-badge">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <span>15 itens máx.</span>
+      </ion-badge>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div style="max-width: 500px; margin: 0 auto; width: 100%;">
+
+  <ion-list class="ion-padding">
+    <ion-item *ngFor="let historyItem of conversionHistory; let i = index">
+      <ion-label>
+        <h3>{{ historyItem.conversion }}</h3>
+        <p>{{ historyItem.timestamp }}</p>
+      </ion-label>
+      <ion-button
+        slot="end"
+        color="transluced"
+        (click)="deleteHistoryItem(i)">
+        <ion-icon
+        color="danger"
+        fill="outline"
+        name="trash-outline"
+        ></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</div>
+</ion-content>
